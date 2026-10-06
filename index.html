@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CISA FY2025 Contract Spending Analysis | Kelvin Reyes</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #172033;
+      background: #f4f7fb;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b2d4d;
+      color: white;
+      padding: 58px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: 1.1rem;
+      color: #d8e6f3;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px 55px;
+    }
+
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #0b2d4d;
+      margin-top: 0;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool {
+      background: #dcecf9;
+      color: #0b2d4d;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .finding {
+      border-left: 5px solid #1c78c0;
+      background: #f4f9fd;
+      padding: 16px;
+      border-radius: 6px;
+    }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 22px;
+    }
+
+    .chart-card {
+      border: 1px solid #d9e1ea;
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .chart-card h3 {
+      margin: 0;
+      padding: 14px 16px;
+      background: #eef5fb;
+      color: #0b2d4d;
+    }
+
+    .chart-card img {
+      width: 100%;
+      display: block;
+      min-height: 250px;
+      object-fit: contain;
+      padding: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: #5c6675;
+      padding: 10px 20px 35px;
+    }
+
+    @media (max-width: 500px) {
+      header h1 { font-size: 1.7rem; }
+      .chart-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CISA FY2025 Contract Spending Analysis</h1>
+    <p>
+      An analysis of Cybersecurity and Infrastructure Security Agency contract
+      transactions using BigQuery SQL and Excel.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        This project examines how CISA obligated contract funding during fiscal
+        year 2025. I used public USAspending transaction data to identify major
+        recipients, leading service categories, competition patterns, and
+        monthly spending trends.
+      </p>
+
+      <div class="tools">
+        <span class="tool">BigQuery</span>
+        <span class="tool">SQL</span>
+        <span class="tool">Excel</span>
+        <span class="tool">Data Visualization</span>
+        <span class="tool">USAspending.gov Data</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Findings</h2>
+
+      <div class="findings">
+        <div class="finding">
+          <strong>Largest Recipient</strong><br>
+          CACI NSS, LLC received the largest net obligation total, about
+          $68.9 million.
+        </div>
+
+        <div class="finding">
+          <strong>Major Service Categories</strong><br>
+          IT management, telecommunications, and end-user IT support were among
+          the largest contract spending categories.
+        </div>
+
+        <div class="finding">
+          <strong>Fiscal-Year-End Spike</strong><br>
+          September 2025 had the highest monthly obligations, about
+          $216.9 million.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dashboard Visualizations</h2>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>Monthly Contract Obligations</h3>
+          <img src="monthly-spending.png" alt="Monthly Contract Obligations chart">
+        </div>
+
+        <div class="chart-card">
+          <h3>Top CISA Contract Recipients</h3>
+          <img src="top-recipients.png" alt="Top CISA Contract Recipients chart">
+        </div>
+
+        <div class="chart-card">
+          <h3>Largest Contract Service Categories</h3>
+          <img src="service-categories.png" alt="Largest Contract Service Categories chart">
+        </div>
+
+        <div class="chart-card">
+          <h3>Obligations by Competition Type</h3>
+          <img src="competition-type.png" alt="Obligations by Competition Type chart">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Method</h2>
+      <p>
+        I downloaded FY2025 CISA contract transaction data from USAspending.gov,
+        uploaded it to BigQuery, and wrote SQL queries to group net obligations
+        by recipient, product or service category, competition type, and month.
+        I then exported the results to Excel and created a dashboard to present
+        the findings.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Created by Kelvin Reyes · Data Analytics Portfolio Project
+  </footer>
+</body>
+</html>
